@@ -1,5 +1,8 @@
 const express = require("express");
 const path = require("path");
+const discosRouter = require("./src/routes/discosRouter");
+const artistasRouter = require("./src/routes/artistasRouter");
+const generosRouter = require("./src/routes/generosRouter");
 const app = express();
 
 const port = process.env.PORT || 3000;
