@@ -1,9 +1,10 @@
 const { Router } = require("express");
+const artistasController = require("../controllers/artistasController");
 const artistasRouter = Router();
 
-artistasRouter.get("/", (req, res) => {});
-artistasRouter.get("/:id", (req, res) => {});
-artistasRouter.post("/", (req, res) => {});
-artistasRouter.delete("/:id", (req, res) => {});
+artistasRouter.get("/", artistasController.getAllArtists);
+artistasRouter.get("/:id", artistasController.getArtistById);
+artistasRouter.post("/", artistasController.createArtist);
+artistasRouter.delete("/:id", artistasController.deleteArtist);
 
 module.exports = artistasRouter;
