@@ -1,9 +1,9 @@
 const { Router } = require("express");
+const generosController = require("../controllers/generosController");
 const generosRouter = Router();
 
-generosRouter.get("/", (req, res) => {});
-generosRouter.get("/:id", (req, res) => {});
-generosRouter.post("/", (req, res) => {});
-generosRouter.delete("/:id", (req, res) => {});
+generosRouter.get("/", generosController.buscaTodosOsGeneros);
+generosRouter.post("/", generosController.criaGenero);
+generosRouter.delete("/:id", generosController.deletaGenero);
 
 module.exports = generosRouter;
