@@ -1,17 +1,17 @@
-async function getAllArtists() {
+async function buscaTodosOsArtistas(req, res) {
   // buscar todos os artistas
 }
 
-async function createArtist(artist) {
+async function criaArtista(req, res) {
   // criar um novo artista
 }
 
-async function deleteArtist(id) {
+async function deletaArtista(req, res) {
   // deletar um artista pelo id
 }
 
 module.exports = {
-  getAllArtists,
-  createArtist,
-  deleteArtist,
+  buscaTodosOsArtistas,
+  criaArtista,
+  deletaArtista,
 };
