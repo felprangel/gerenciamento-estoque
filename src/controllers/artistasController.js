@@ -1,5 +1,8 @@
+const db = require("../db/queries");
+
 async function buscaTodosOsArtistas(req, res) {
-  // buscar todos os artistas
+  const artistas = await db.buscaTodosOsArtistas();
+  res.status(200).json(artistas);
 }
 
 async function criaArtista(req, res) {
