@@ -6,7 +6,9 @@ async function buscaTodosOsArtistas(req, res) {
 }
 
 async function criaArtista(req, res) {
-  // criar um novo artista
+  const { nome, discos } = req.body;
+  await db.criaArtista(nome, discos);
+  res.redirect("/artistas");
 }
 
 async function deletaArtista(req, res) {
