@@ -37,7 +37,11 @@ async function criaDisco(req, res) {
   res.redirect("/discos");
 }
 
-async function deletaDisco(req, res) {}
+async function deletaDisco(req, res) {
+  const { id } = req.body;
+  await db.deletaDisco(id);
+  res.redirect("/discos");
+}
 
 module.exports = {
   buscaTodosOsDiscos,
