@@ -5,7 +5,11 @@ async function buscaTodosOsGeneros(req, res) {
   res.status(200).json(generos);
 }
 
-async function criaGenero(req, res) {}
+async function criaGenero(req, res) {
+  const { nome } = req.body;
+  db.criaGenero(nome);
+  res.redirect("/generos");
+}
 
 async function deletaGenero(req, res) {}
 
