@@ -11,7 +11,11 @@ async function criaGenero(req, res) {
   res.redirect("/generos");
 }
 
-async function deletaGenero(req, res) {}
+async function deletaGenero(req, res) {
+  const { id } = req.params;
+  db.deletaGenero(id);
+  res.redirect("/generos");
+}
 
 module.exports = {
   buscaTodosOsGeneros,
