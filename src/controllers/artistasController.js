@@ -12,7 +12,9 @@ async function criaArtista(req, res) {
 }
 
 async function deletaArtista(req, res) {
-  // deletar um artista pelo id
+  const { id } = req.params;
+  await db.deletaArtista(id);
+  res.redirect("/artistas");
 }
 
 module.exports = {
