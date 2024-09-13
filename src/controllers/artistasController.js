@@ -12,7 +12,7 @@ async function criaArtista(req, res) {
 }
 
 async function deletaArtista(req, res) {
-  const { id } = req.params;
+  const { id } = req.body;
   await db.deletaArtista(id);
   res.redirect("/artistas");
 }

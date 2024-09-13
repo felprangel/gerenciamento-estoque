@@ -12,7 +12,7 @@ async function criaGenero(req, res) {
 }
 
 async function deletaGenero(req, res) {
-  const { id } = req.params;
+  const { id } = req.body;
   db.deletaGenero(id);
   res.redirect("/generos");
 }
