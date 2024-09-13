@@ -78,6 +78,10 @@ async function criaDisco(
   );
 }
 
+async function deletaDisco(id) {
+  await pool.query("DELETE FROM discos WHERE id = $1", [id]);
+}
+
 module.exports = {
   buscaTodosOsArtistas,
   criaArtista,
@@ -90,4 +94,5 @@ module.exports = {
   buscaDiscosPorArtista,
   buscaDiscosPorGenero,
   criaDisco,
+  deletaDisco,
 };
