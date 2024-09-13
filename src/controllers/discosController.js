@@ -5,7 +5,11 @@ async function buscaTodosOsDiscos(req, res) {
   res.status(200).json(discos);
 }
 
-async function buscaDiscoPorId(req, res) {}
+async function buscaDiscoPorId(req, res) {
+  const { id } = req.params;
+  const disco = db.buscaDiscoPorId(id);
+  res.status(200).json(disco);
+}
 
 async function buscaDiscosPorArtista(req, res) {}
 
