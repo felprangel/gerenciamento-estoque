@@ -1,4 +1,9 @@
-async function buscaTodosOsDiscos(req, res) {}
+const db = require("../db/queries");
+
+async function buscaTodosOsDiscos(req, res) {
+  const discos = db.buscaTodosOsDiscos();
+  res.status(200).json(discos);
+}
 
 async function buscaDiscoPorId(req, res) {}
 
