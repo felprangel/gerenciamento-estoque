@@ -14,7 +14,15 @@ async function buscaTodosOsGeneros() {
   return rows;
 }
 
+async function buscaTodosOsDiscos() {
+  const { rows } = await pool.query(
+    "SELECT id, nome, artista_id, genero_id, estoque, preco, data_lancamento FROM discos"
+  );
+  return rows;
+}
+
 module.exports = {
   buscaTodosOsArtistas,
   buscaTodosOsGeneros,
+  buscaTodosOsDiscos,
 };
