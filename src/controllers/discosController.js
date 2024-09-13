@@ -11,7 +11,11 @@ async function buscaDiscoPorId(req, res) {
   res.status(200).json(disco);
 }
 
-async function buscaDiscosPorArtista(req, res) {}
+async function buscaDiscosPorArtista(req, res) {
+  const { artista } = req.query;
+  const discos = db.buscaDiscosPorArtista(artista);
+  res.status(200).json(discos);
+}
 
 async function buscaDiscosPorGenero(req, res) {}
 
