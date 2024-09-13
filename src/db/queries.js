@@ -14,6 +14,10 @@ async function criaArtista(nome, discos) {
   ]);
 }
 
+async function deletaArtista(id) {
+  await pool.query("DELETE FROM artistas WHERE id = $1", [id]);
+}
+
 async function buscaTodosOsGeneros() {
   const { rows } = await pool.query(
     "SELECT id, nome, data_criacao FROM generos"
@@ -31,6 +35,7 @@ async function buscaTodosOsDiscos() {
 module.exports = {
   buscaTodosOsArtistas,
   criaArtista,
+  deletaArtista,
   buscaTodosOsGeneros,
   buscaTodosOsDiscos,
 };
