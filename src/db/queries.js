@@ -7,6 +7,14 @@ async function buscaTodosOsArtistas() {
   return rows;
 }
 
+async function buscaTodosOsGeneros() {
+  const { rows } = await pool.query(
+    "SELECT id, nome, data_criacao FROM generos"
+  );
+  return rows;
+}
+
 module.exports = {
   buscaTodosOsArtistas,
+  buscaTodosOsGeneros,
 };
