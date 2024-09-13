@@ -29,6 +29,10 @@ async function criaGenero(nome) {
   await pool.query("INSERT INTO generos (nome) VALUES ($1)", [nome]);
 }
 
+async function deletaGenero(id) {
+  await pool.query("DELETE FROM generos WHERE id = $1", [id]);
+}
+
 async function buscaTodosOsDiscos() {
   const { rows } = await pool.query(
     "SELECT id, nome, artista_id, genero_id, estoque, preco, data_lancamento FROM discos"
@@ -42,5 +46,6 @@ module.exports = {
   deletaArtista,
   buscaTodosOsGeneros,
   criaGenero,
+  deletaGenero,
   buscaTodosOsDiscos,
 };
