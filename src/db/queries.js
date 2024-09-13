@@ -7,6 +7,13 @@ async function buscaTodosOsArtistas() {
   return rows;
 }
 
+async function criaArtista(nome, discos) {
+  await pool.query("INSERT INTO artistas (nome, discos) VALUES ($1, $2)", [
+    nome,
+    discos,
+  ]);
+}
+
 async function buscaTodosOsGeneros() {
   const { rows } = await pool.query(
     "SELECT id, nome, data_criacao FROM generos"
@@ -23,6 +30,7 @@ async function buscaTodosOsDiscos() {
 
 module.exports = {
   buscaTodosOsArtistas,
+  criaArtista,
   buscaTodosOsGeneros,
   buscaTodosOsDiscos,
 };
