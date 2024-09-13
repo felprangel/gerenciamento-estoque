@@ -6,7 +6,7 @@ async function buscaTodosOsDiscos(req, res) {
 }
 
 async function buscaDiscoPorId(req, res) {
-  const { id } = req.params;
+  const { id } = req.query;
   const disco = db.buscaDiscoPorId(id);
   res.status(200).json(disco);
 }
