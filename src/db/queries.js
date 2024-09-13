@@ -64,6 +64,20 @@ async function buscaDiscosPorGenero(genero_id) {
   return rows;
 }
 
+async function criaDisco(
+  nome,
+  artista_id,
+  genero_id,
+  estoque,
+  preco,
+  data_lancamento
+) {
+  await pool.query(
+    "INSERT INTO discos (nome, artista_id, genero_id, estoque, preco, data_lancamento) VALUES ($1, $2, $3, $4, $5, $6)",
+    [nome, artista_id, genero_id, estoque, preco, data_lancamento]
+  );
+}
+
 module.exports = {
   buscaTodosOsArtistas,
   criaArtista,
@@ -75,4 +89,5 @@ module.exports = {
   buscaDiscoPorId,
   buscaDiscosPorArtista,
   buscaDiscosPorGenero,
+  criaDisco,
 };
