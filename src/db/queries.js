@@ -48,6 +48,14 @@ async function buscaDiscoPorId(id) {
   return rows[0];
 }
 
+async function buscaDiscosPorArtista(artista_id) {
+  const { rows } = await pool.query(
+    "SELECT id, nome, artista_id, genero_id, estoque, preco, data_lancamento FROM discos WHERE artista_id = $1",
+    [artista_id]
+  );
+  return rows;
+}
+
 module.exports = {
   buscaTodosOsArtistas,
   criaArtista,
@@ -57,4 +65,5 @@ module.exports = {
   deletaGenero,
   buscaTodosOsDiscos,
   buscaDiscoPorId,
+  buscaDiscosPorArtista,
 };
