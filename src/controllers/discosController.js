@@ -23,7 +23,19 @@ async function buscaDiscosPorGenero(req, res) {
   res.status(200).json(discos);
 }
 
-async function criaDisco(req, res) {}
+async function criaDisco(req, res) {
+  const { nome, artista_id, genero_id, estoque, preco, data_lancamento } =
+    req.body;
+  await db.criaDisco(
+    nome,
+    artista_id,
+    genero_id,
+    estoque,
+    preco,
+    data_lancamento
+  );
+  res.redirect("/discos");
+}
 
 async function deletaDisco(req, res) {}
 
